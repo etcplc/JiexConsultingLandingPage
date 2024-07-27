@@ -1,0 +1,99 @@
+"use client";
+import React from "react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+import { blogData4 } from "@/data/Data";
+import Link from "next/link";
+
+const BlogSection5 = () => {
+  return (
+    <section className="rv-6-blogs rv-section-spacing">
+      <DivAnimateYAxis className="container">
+        <div className="rv-6-section__heading">
+          <div className="rv-6-section-heading__left">
+            <h6 className="rv-6-section__sub-title rv-text-anime">
+              Latest News & Blog
+            </h6>
+            <h2 className="rv-6-section__title mb-0 rv-text-anime">
+              Explore Our Newest Updates & Blog Posts.
+            </h2>
+          </div>
+
+          <div className="rv-3-section-heading__right">
+            <div className="rv-1-slider-nav" id="rv-6-blogs__slider-nav">
+              <button className="prev">
+                <i className="fa-regular fa-arrow-left"></i>
+              </button>
+              <button className="next">
+                <i className="fa-regular fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <Swiper
+          className="rv-6-blogs__slider"
+          autoplay={true}
+          spaceBetween={30}
+          slidesPerView={2}
+          navigation={{
+            prevEl: "#rv-6-blogs__slider-nav .prev",
+            nextEl: "#rv-6-blogs__slider-nav .next",
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              centeredSlides: true,
+            },
+            992: {
+              slidesPerView: 1.6,
+              centeredSlides: true,
+            },
+            1200: {
+              spaceBetween: 30,
+              slidesPerView: 2,
+            },
+          }}
+          modules={[Autoplay, Navigation]}
+        >
+          {blogData4.slice(2, 5).map((item) => (
+            <SwiperSlide className="rv-1-blog rv-6-blog" key={item.id}>
+              <div className="rv-6-blog__img">
+                <img src={item.img} alt="Blog Image" />
+              </div>
+
+              <div className="rv-6-blog__txt">
+                <ul className="rv-1-blog__infos">
+                  <li>
+                    <img src="/assets/calender-icon.svg" alt="calender" />
+                    {item.date}
+                  </li>
+                  <li>
+                    <img src="assets/img/rv-1-icon-5.png" alt="icon" />{" "}
+                    {item.comments}
+                    Comments
+                  </li>
+                </ul>
+                <h4 className="rv-1-blog__title">
+                  <Link href={`/blog/${item.slug}`}>{item.title}</Link>
+                </h4>
+                <p className="rv-6-blog__descr">
+                  Fusce tincidunt nisi condimentum amet laoreet leo eleifend.
+                </p>
+                <Link
+                  href={`/blog/${item.slug}`}
+                  className="rv-1-schedule-conf__btn rv-1-blog__btn"
+                >
+                  Read More <i className="fa-light fa-arrow-right"></i>
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </DivAnimateYAxis>
+    </section>
+  );
+};
+
+export default BlogSection5;
