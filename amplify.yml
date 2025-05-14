@@ -19,7 +19,7 @@ frontend:
   customRules:
     # 1) Redirect all requests without a file extension to index.html
     - source: "</^[^.]+$/>"
-      target: "/index.html"
+      target: "./public/index.html"
       status: 200
     # 2) Optionally, you can bubble through static assets normally
     - source: "/<*/*.(js|css|png|jpg|svg|webp|json)>"
