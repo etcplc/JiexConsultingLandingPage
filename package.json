@@ -2,7 +2,7 @@
   "name": "jiex-consulting-landing",
   "version": "1.0.0",
   "private": true,
-  "homepage": "./public/index.html",
+  "homepage": "https://jiexconsulting.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
