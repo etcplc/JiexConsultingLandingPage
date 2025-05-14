@@ -10,7 +10,7 @@ const ContactSection = lazy(() => import('./components/ContactSection'));
 
 export default function App() {
   return (
-    <ThemeProvider>
+    // <ThemeProvider>
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <HeroSection />
         <AboutSection />
@@ -18,6 +18,6 @@ export default function App() {
         <JobSection />
         <ContactSection />
       </Suspense>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 }
