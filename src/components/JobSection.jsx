@@ -28,7 +28,7 @@ export default function JobSection() {
         setJobs([
           { id: 1, title: 'Business Consultant', location: 'Remote', description: 'Provide expert business advice to growing enterprises.' },
           { id: 2, title: 'Recruitment Specialist', location: 'Lagos, NG', description: 'Manage full-cycle recruitment and talent sourcing.' },
-          { id: 2, title: 'Recruitment Specialist', location: 'Lagos, NG', description: 'Manage full-cycle recruitment and talent sourcing.' },
+          { id: 3, title: 'Recruitment Specialist', location: 'Lagos, NG', description: 'Manage full-cycle recruitment and talent sourcing.' },
 
         ]);
       } finally {
