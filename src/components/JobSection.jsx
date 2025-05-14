@@ -57,7 +57,7 @@ export default function JobSection() {
           initial="hidden"
           animate={loading ? 'hidden' : 'visible'}
         >
-          {jobs.map((job) => (
+          jobs ? {jobs.map((job) => (
             <motion.div
               key={job.id}
               className="job-card"
@@ -79,7 +79,7 @@ export default function JobSection() {
                 Apply Now
               </a>
             </motion.div>
-          ))}
+          ))} : `jobs not found`
         </motion.div>
       </div>
     </section>
